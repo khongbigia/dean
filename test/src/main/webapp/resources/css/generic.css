@@ -1,0 +1,38 @@
+#avata_status{
+				margin-left: auto;
+    			margin-right: auto;
+    			width: 300px;
+    			text-align:center;
+    			color: #00ff00;
+			}
+.bar {   
+				    width: auto;
+				    height: 40px;
+				    margin: -10px;
+				    border-width: 1px;
+				    border-style: solid;
+				    border-color: rgba(0,0,0,.2);
+				    background-color: #66CCCC;
+				}
+
+#alert {   
+			    width: 30;
+			    height: 30px;
+			    margin: 5px;
+			    border-width: 0px;
+			    background-color:white;
+		}
+		
+#broadcast {   
+				margin-left: auto;
+    			margin-right: auto;
+			    width: 300px;
+			    text-align:center;
+			    color: #00ff00;
+		}
+		
+.notify
+{
+	/*float: right;*/
+	margin: 2px;
+}

@@ -1,0 +1,12 @@
+<b>[This e-mail was automatically generated. Please do not reply.]</b>
+
+Dear ${user.userName},
+
+Thank you for signing up. 
+You need to click the following url to confirm before being allowed to sign in.
+
+${url}
+
+
+Thank you
+

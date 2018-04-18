@@ -1,0 +1,35 @@
+.foo {   
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.2);
+}
+
+.bar {   
+	left: 0px;
+	right: 0px;
+    width: auto;
+    height: 40px;
+    margin: -10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.2);
+    background-color: #66CCCC;
+}
+
+#i {   
+    width: 30;
+    height: 30px;
+    margin: 5px;
+    border-width: 0px;
+    background-color:white;
+}
+
+.aa
+{
+	/*float: right;*/
+	margin: 2px;
+}

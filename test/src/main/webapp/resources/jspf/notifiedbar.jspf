@@ -1,0 +1,13 @@
+<div class="bar">
+	<div id ="alert">
+		
+	</div>
+</div>
+<br>
+<div id="avata_status">
+	<img src=<c:out value="${avatarpath}"/> height="100" width="100">
+	<div id="username">${username}</div>
+	
+</div>
+<div id="broadcast" >Share Location : ${sharelocation}</div>
+<br>

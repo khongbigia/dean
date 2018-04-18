@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd      
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+       http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">
+
+    <mvc:annotation-driven /> <!-- for validation bean -->
+    
+    
+   	<bean id="confirmPasswordValidator" class="com.datnguyen.socialnetwork.validator.ConfirmPasswordValidator" />
+   	<bean id="fileValidator" class="com.datnguyen.socialnetwork.validator.FileValidator" />
+
+    <context:annotation-config />
+
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+   
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+ 	 <bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+         <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="10000000" />
+    </bean>
+ 	
+    <context:component-scan base-package="com.datnguyen.socialnetwork.controller" />
+    <context:component-scan base-package="com.datnguyen.socialnetwork.restapi" />
+	<!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+    	<property name="useDefaultSuffixPattern" value="false" />
+	</bean>  -->
+	
+	<websocket:handlers>
+        <websocket:mapping path="/websocket" handler="websocketEndPoint"/>
+	</websocket:handlers>
+	<bean id="websocketEndPoint" class="com.datnguyen.socialnetwork.websocket.WebsocketEndPoint"/>
+</beans>

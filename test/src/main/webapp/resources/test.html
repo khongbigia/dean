@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			span.highlight {
+	   			 background-color: yellow;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="test.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			var  a = new Array();
+	    	a['msg']=0;
+	    	a['ask']=0;
+	       
+	        $(document).ready(function() {
+	        	
+				function blink(selector){
+	            	$(selector).fadeOut('slow', function(){
+	               		$(this).fadeIn('slow', function(){
+	                    	blink(this);
+	                    });
+	                });
+	            }
+				
+				function off(selector){
+	            	$(selector).remove();
+	            }
+				
+	            $("#on1").click(function() {
+					if ( a['msg']==0){
+	                	( "#i" ).append( '<img id="bb" class="aa" src="images/red-env.PNG" alt="Klematis" width="30" height="26">' );
+	                	blink("#bb");
+	                }
+	                a['msg']=1;
+				});
+	            
+				$("#off1").click(function() {
+	            	a['msg']=0;
+	               	off("#bb");
+	            });
+	                
+	            $("#on2").click(function() {
+					if ( a['ask']==0){
+	               		$( "#i" ).append( '<img id="kk" class="aa" src="images/red-ask.PNG" alt="Klematis" width="30" height="26">' );
+						blink("#kk");
+	                }
+	               	a['ask']=1;
+	            });
+	            
+				$("#off2").click(function() {
+	            	a['ask']=0;
+	                off("#kk");
+	            });
+			});
+		 </script>
+	</head>
+	
+	<body>
+		<p>
+			<span class="highlight">This is a text.</span> This is a text. This is a text. This is a text. This is a text. This is a text. This is a text. This is a text. This is a text. <span class="highlight">This is a text.</span>
+		</p>
+		<div class="foo" style="background-color:#13b4ff;"></div>
+		<div class="foo" style="background-color:#ab3fdd;"></div>
+		<div class="foo" style="background-color:#ae163e;"></div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="bar">
+			<div id ="i">
+				<!--<img id='bb' class="aa" src="images/red-env.PNG" alt="Klematis" width="30" height="26">  -->
+			</div>
+		</div>
+		<br>
+		<br>
+		<input type="button" value="on1" class="on1" id="on1" />
+		<input type="button" value="off1" class="off1" id="off1" />
+		<br>
+		<br>
+		<input type="button" value="on2" class="on2" id="on2" />
+		<input type="button" value="off2" class="off2" id="off2" />
+	</body>
+</html>
