@@ -95,7 +95,7 @@
 	<bean id="smtpAuthenticator"
 		class="forums.mailtest.SmtpAuthenticator">
 		<constructor-arg value="vun4822@gmail.com" />
-		<constructor-arg value="Ilovehightech123" />
+		<constructor-arg value="123" />
 	</bean>
 	
 	<bean id="mailSession" class="javax.mail.Session"
